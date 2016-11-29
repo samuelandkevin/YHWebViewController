@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "RNCachingURLProtocol.h"
+#import "VC1.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,32 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //1.webView离线缓存
+    [NSURLProtocol registerClass:[RNCachingURLProtocol class]];
+    
+    //2.setupUserAgent
+    UIWebView *tempWebV = [[UIWebView alloc] init];
+    NSString *sAgent = [tempWebV stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+    NSString *userAgent = [NSString stringWithFormat:@"%@; ShuiDao /%f",sAgent,2.0];
+    [tempWebV stringByEvaluatingJavaScriptFromString:userAgent];
+    NSDictionary*dictionnary = [[NSDictionary alloc] initWithObjectsAndKeys:userAgent, @"UserAgent", nil];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:dictionnary];
+    
+    
+    //3.设置rootViewController
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    VC1 *vc = [[VC1 alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    //设置导航栏标题颜色
+    NSDictionary *attributes = @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:18]};
+    nav.navigationBar.titleTextAttributes = attributes;
+    UIColor * color = [UIColor colorWithRed:0.f green:191.f / 255 blue:143.f / 255 alpha:1];
+    nav.navigationBar.barTintColor = color;
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
+
+    
     return YES;
 }
 
