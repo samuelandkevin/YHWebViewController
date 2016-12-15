@@ -7,7 +7,7 @@
 //
 
 #import "YHWebViewController.h"
-
+#import "STMURLCache.h"
 
 @interface YHWebViewController ()<UIWebViewDelegate,UIScrollViewDelegate>
 
@@ -21,6 +21,8 @@
 //标志变量
 @property (nonatomic,assign)  BOOL hasRegisterKeyboardNotification;
 @property (nonatomic,assign)  BOOL        keyboardIsShown;
+
+@property (nonatomic, strong) STMURLCache *sCache;
 @end
 
 @implementation YHWebViewController
@@ -44,6 +46,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self initUI];
+    
+    
+    self.sCache = [STMURLCache create:^(STMURLCacheMk *mk) {
+    }];
+    
+    [self.sCache update:^(STMURLCacheMk *mk) {
+        mk.isDownloadMode(YES);
+    }];
+    
+    if (self.url) {
+         [self.sCache preLoadByWebViewWithUrls:@[[self.url absoluteString]]];
+    }
+   
     
 }
 

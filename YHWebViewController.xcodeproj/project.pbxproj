@@ -32,6 +32,9 @@
 		AC70AEB71DED59A700EE61F1 /* VC1.m in Sources */ = {isa = PBXBuildFile; fileRef = AC70AEB61DED59A700EE61F1 /* VC1.m */; };
 		AC70AEBC1DED59A700EE61F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC70AEBB1DED59A700EE61F1 /* Assets.xcassets */; };
 		AC70AEBF1DED59A700EE61F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC70AEBD1DED59A700EE61F1 /* LaunchScreen.storyboard */; };
+		ACF979B01DFE79A800F776A3 /* STMURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF979AB1DFE79A800F776A3 /* STMURLCache.m */; };
+		ACF979B11DFE79A800F776A3 /* STMURLCacheMk.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF979AD1DFE79A800F776A3 /* STMURLCacheMk.m */; };
+		ACF979B21DFE79A800F776A3 /* STMURLCacheModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF979AF1DFE79A800F776A3 /* STMURLCacheModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +92,12 @@
 		AC70AEBB1DED59A700EE61F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC70AEBE1DED59A700EE61F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC70AEC01DED59A700EE61F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACF979AA1DFE79A800F776A3 /* STMURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMURLCache.h; sourceTree = "<group>"; };
+		ACF979AB1DFE79A800F776A3 /* STMURLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMURLCache.m; sourceTree = "<group>"; };
+		ACF979AC1DFE79A800F776A3 /* STMURLCacheMk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMURLCacheMk.h; sourceTree = "<group>"; };
+		ACF979AD1DFE79A800F776A3 /* STMURLCacheMk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMURLCacheMk.m; sourceTree = "<group>"; };
+		ACF979AE1DFE79A800F776A3 /* STMURLCacheModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMURLCacheModel.h; sourceTree = "<group>"; };
+		ACF979AF1DFE79A800F776A3 /* STMURLCacheModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMURLCacheModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +125,7 @@
 		AC0448D01DED5C7B00180A95 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				ACF979A91DFE79A800F776A3 /* STMURLCache */,
 				AC0449061DED665400180A95 /* MBProgressHUD */,
 				AC0448F71DED5D9800180A95 /* RNCachingURLProtocol */,
 				AC0448D11DED5C9300180A95 /* Masonry */,
@@ -250,6 +260,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		ACF979A91DFE79A800F776A3 /* STMURLCache */ = {
+			isa = PBXGroup;
+			children = (
+				ACF979AA1DFE79A800F776A3 /* STMURLCache.h */,
+				ACF979AB1DFE79A800F776A3 /* STMURLCache.m */,
+				ACF979AC1DFE79A800F776A3 /* STMURLCacheMk.h */,
+				ACF979AD1DFE79A800F776A3 /* STMURLCacheMk.m */,
+				ACF979AE1DFE79A800F776A3 /* STMURLCacheModel.h */,
+				ACF979AF1DFE79A800F776A3 /* STMURLCacheModel.m */,
+			);
+			path = STMURLCache;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -281,6 +304,7 @@
 				TargetAttributes = {
 					AC70AEAB1DED59A700EE61F1 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 6C6E567289;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -327,6 +351,7 @@
 				AC0448FD1DED5D9800180A95 /* RNCachingURLProtocol.m in Sources */,
 				AC70AEB71DED59A700EE61F1 /* VC1.m in Sources */,
 				AC70AEB41DED59A700EE61F1 /* AppDelegate.m in Sources */,
+				ACF979B01DFE79A800F776A3 /* STMURLCache.m in Sources */,
 				AC0448CB1DED5A8000180A95 /* YHWebViewController.m in Sources */,
 				AC0449101DED7BFE00180A95 /* YHSharePresentView.m in Sources */,
 				AC0449091DED665400180A95 /* MBProgressHUD.m in Sources */,
@@ -338,9 +363,11 @@
 				AC0449051DED642600180A95 /* YHSideMenuView.m in Sources */,
 				AC0448FC1DED5D9800180A95 /* NSString+Sha1.m in Sources */,
 				AC0448F31DED5C9300180A95 /* NSArray+MASAdditions.m in Sources */,
+				ACF979B21DFE79A800F776A3 /* STMURLCacheModel.m in Sources */,
 				AC0448F61DED5C9300180A95 /* ViewController+MASAdditions.m in Sources */,
 				AC0448EE1DED5C9300180A95 /* MASConstraint.m in Sources */,
 				AC0448F01DED5C9300180A95 /* MASLayoutConstraint.m in Sources */,
+				ACF979B11DFE79A800F776A3 /* STMURLCacheMk.m in Sources */,
 				AC0449001DED619D00180A95 /* Reachability.m in Sources */,
 				AC70AEB11DED59A700EE61F1 /* main.m in Sources */,
 			);
@@ -456,6 +483,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6C6E567289;
 				INFOPLIST_FILE = YHWebViewController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HKP.YHWebViewController;
@@ -467,6 +495,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6C6E567289;
 				INFOPLIST_FILE = YHWebViewController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HKP.YHWebViewController;
